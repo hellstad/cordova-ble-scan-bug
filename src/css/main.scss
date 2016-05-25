@@ -1,0 +1,174 @@
+@import 'colours';
+
+.pane {
+	//background-color: #383838;
+	background-color: #fff;
+}
+
+.heading-inline {
+	display: inline-block;
+}
+
+.heading-subtext {
+	&.active {
+		color: $ion-balanced;
+	}
+	&.inactive {
+		color: $ion-assertive;
+	}
+}
+
+/**
+ *  Fixes angular animation issue for Ionic title bar. (Breaks in Android)
+ *                (╯°□°)╯︵ ┻━┻
+ */
+.title {
+	transition-duration: 0ms !important;
+	transform: translate3d(0px, 0px, 0px) !important;
+	text-align: center !important;
+}
+
+.bar-main {
+	background-color: $ex-bg;
+	background-image: none;
+	border-color: darken($ex-bg, 0.5);
+	color: $ex-fg;
+
+	.button {
+		color: $ex-fg;
+	}
+}
+
+.home-list {
+	$ion-item-height: 75px;
+
+	ion-item, .item-content {
+		height: $ion-item-height;
+
+		&.item-sw-device {
+			height: $ion-item-height;
+
+			.item-block .item-status {
+				/* item-sw-device contents */
+			}
+		}
+
+		.item-block-content {
+			position: absolute;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+
+		&.ion-item-2x {
+			height: calc(#{$ion-item-height} * 2);
+
+			@for $i from 1 through 2 {
+				.item-block-content > div:nth-of-type(#{$i}) {
+					top: calc(#{$ion-item-height} * #{$i} - #{$ion-item-height});
+					height: calc(#{$ion-item-height});
+				}
+			}
+		}
+
+		.item-icon {
+			position: absolute;
+			top: 50%;
+			width: 30px;
+			transform: translateY(-50%);
+			text-align: center;
+
+			i {
+				font-size: 30px;
+			}
+		}
+
+		.item-block {
+			position: absolute;
+			left: 60px;
+			height: 100%;
+			width: calc(100% - 50px);
+
+			.item-title {
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-size: 12px;
+				color: #9E9E9E;
+			}
+
+			.item-status {
+				position: absolute;
+				top: 20px;
+				left: 0;
+				font-size: 22px;
+				width: calc(100% - 50px);
+				height: 25px;
+			}
+
+			.item-bar {
+				content: " ";
+				position: absolute;
+				top: 20px;
+				left: 0;
+				width: 100%;
+				height: 20px;
+				background-color: #e0e0e0;
+
+				.progress {
+					content: " ";
+					position: absolute;
+					width: 75%;
+					height: 100%;
+					background-color: $ion-balanced;
+				}
+			}
+		}
+
+		.item-grey-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(127, 127, 127, 0.6);
+
+			.item-overlay-label {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				padding: 10px;
+				border-radius: 2px;
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+		}
+
+		.item-arrow {
+			content: " ";
+			position: absolute;
+			right: 10px;
+		}
+
+		.item-arrow {
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			font-size: 20px;
+			color: #9e9e9e;
+			transform: translateY(-50%);
+		}
+
+		.green {
+			color: $ion-balanced;
+		}
+		
+		.yellow {
+			color: $ion-energized;
+		}
+
+		.red {
+			color: $ion-assertive;
+		}
+	}
+}

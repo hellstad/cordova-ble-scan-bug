@@ -1,0 +1,26 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Select Device</h1>
+		<div class="buttons">
+			<button class="button button-light" ng-click="closeModal()">Cancel</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<ion-list class="device-list" ng-show="!!discoveredSavedPeripherals.length">
+			<ion-item class="device-item-title">
+				<strong><i class="icon ion-arrow-down-b"></i> Saved Devices</strong>
+			</ion-item>
+			<ion-item ng-repeat="device in discoveredSavedPeripherals" class="item-icon-right" ng-click="selectDevice(device)" ng-show="!!device.name">
+				{{device.name}}
+			</ion-item>
+		</ion-list>
+		<ion-list class="device-list">
+			<ion-item class="device-item-title">
+				<strong><i class="icon ion-arrow-down-b"></i> All Devices</strong>
+			</ion-item>
+			<ion-item ng-repeat="device in discoveredPeripherals" class="item-icon-right" ng-click="selectDevice(device)" ng-show="!!device.name">
+				{{device.name}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-modal-view>

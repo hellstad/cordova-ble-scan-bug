@@ -1,0 +1,88 @@
+{
+  "name": "example-ble-scan-project",
+  "version": "1.1.1",
+  "description": "An Ionic project",
+  "scripts": {
+    "clean": "gulp clean",
+    "start": "parallelshell 'gulp watch' 'karma start'",
+    "watch": "gulp watch",
+    "test": "karma start",
+    "build": "gulp build && ionic prepare && ionic build",
+    "dist": "gulp dist",
+    "ios": "ionic prepare && ionic run ios --device",
+    "emulate-ios": "ionic prepare && ionic emulate ios",
+    "ionic-build": "ionic prepare && ionic build"
+  },
+  "jscsConfig": {
+    "preset": "airbnb",
+    "esnext": true,
+    "requireTrailingComma": false,
+    "requireSpacesInAnonymousFunctionExpression": {
+      "beforeOpeningRoundBrace": true,
+      "beforeOpeningCurlyBrace": true
+    },
+    "validateIndentation": 4,
+    "requirePaddingNewLinesAfterBlocks": {
+      "allExcept": [
+        "inCallExpressions",
+        "inNewExpressions",
+        "inArrayExpressions",
+        "inProperties"
+      ]
+    },
+    "maximumLineLength": 120
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "bower": "^1.3.3",
+    "browserify": "^13.0.0",
+    "gulp": "^3.5.6",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.2.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.2",
+    "gulp-util": "^2.2.14",
+    "jasmine-core": "^2.4.1",
+    "jscs": "^2.10.1",
+    "karma": "^0.13.21",
+    "karma-browserify": "^5.0.2",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
+    "parallelshell": "^2.0.0",
+    "plist": "^1.2.0",
+    "require-globify": "^1.3.0",
+    "shelljs": "^0.3.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-console",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-file",
+    "cordova-plugin-transport-security",
+    "cordova-plugin-zip",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-ble-central"
+  ],
+  "cordovaPlatforms": [
+    {
+      "platform": "ios",
+      "version": "4.1.0",
+      "locator": "ios@4.1.0"
+    },
+    "android"
+  ]
+}
